@@ -1,0 +1,23 @@
+- name: Check if systemd is available
+  command: systemctl --version
+  register: systemctl_output
+  ignore_errors: true
+
+# not working (don't know why)
+- name: Set hostname
+  hostname:
+    name: vps.do-p.com
+    use: systemd
+#
+
+- name: Set hostname in /etc/hosts
+  become: yes
+  lineinfile:
+    path: /etc/hosts
+    line: 127.0.0.1 localhost.localdomain localhost
+
+- name: Set hostname in /etc/hosts
+  become: yes
+  lineinfile:
+    path: /etc/hosts
+    line: 150.136.161.104 vps.do-p.com vps

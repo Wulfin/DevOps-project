@@ -1,4 +1,4 @@
-#!/home/saif/Desktop/studies/DevOps-project-Oreilly/venv/bin/python
+#!/home/saif/Desktop/studies/DevOps-project-Oreilly/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
