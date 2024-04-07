@@ -1,0 +1,17 @@
+- name: drop-in directory
+  file:
+    path: /etc/systemd/network/05-eth0.network.d
+    state: directory
+    mode: '755'
+    owner: root
+    group: root
+
+- name: copy custom config
+  copy:
+    src: files/01-custom.conf
+    dest: /etc/systemd/network/05-eth0.network.d/01-custom.conf
+    owner: root
+    group: root
+    mode: '644'
+    backup: yes
+  notify: restart systemd-networkd # This is the important line that triggers the handler to restart the service
