@@ -1,4 +1,4 @@
-- name: Check if systemd is available
+- name: Check if systemd is availablee
   command: systemctl --version
   register: systemctl_output
   ignore_errors: true
